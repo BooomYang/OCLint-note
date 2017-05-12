@@ -17,9 +17,14 @@ $ brew upgrade oclint
 $ gem install xcpretty
 ```
 #### `二.使用`
+
+* 清空
+```c
+$ xcodebuild clean
+```
 * 分析code并生成compile_commands.json文件
 ```c
-$ xcodebuild analyze | xcpretty -r json-compilation-database -o compile_commands.json
+$ xcodebuild -workspace yourWorkspace.xcworkspace -scheme yourScheme analyze | xcpretty -r json-compilation-database -o compile_commands.json
 ```
 * 用oclint分析json文件并生成报表
 ```c
